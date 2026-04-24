@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>QUEDE STUDIO挑战杯比赛规则</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0f1e;
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.55;
+            color: #eef2ff;
+            padding: 2rem 1rem;
+        }
+
+        /* 主容器 */
+        .rules-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(18, 25, 45, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.15);
+            overflow: hidden;
+            padding: 1.8rem 2rem 2.5rem;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .rules-container {
+                padding: 1.2rem 1.2rem 1.8rem;
+                border-radius: 1.5rem;
+            }
+        }
+
+        /* 头部装饰 */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 193, 7, 0.4);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD966, #FFB347);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
+        .sub {
+            font-size: 0.9rem;
+            color: #9aa9c1;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .badge {
+            background: #2a3348;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #ffdf8c;
+        }
+
+        /* 章节样式 */
+        .section {
+            margin-bottom: 2rem;
+            scroll-margin-top: 1rem;
+        }
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            border-left: 5px solid #f5b042;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            margin-top: 0.2rem;
+            color: #FFE3A4;
+        }
+        .subsection {
+            margin: 1rem 0 0.8rem 0.8rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+            color: #ffda99;
+            border-bottom: 1px dashed #334155;
+            padding-bottom: 0.2rem;
+        }
+        .rule-list {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+        .rule-list li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .rule-list li::before {
+            content: "⚔️";
+            position: absolute;
+            left: 0;
+            color: #f5b042;
+            font-size: 0.85rem;
+        }
+        .rule-number {
+            font-weight: 700;
+            color: #ffcd7e;
+            margin-right: 0.3rem;
+        }
+        .highlight {
+            background: #1e2a3e;
+            padding: 0.1rem 0.3rem;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #ffda88;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        .warning {
+            background: rgba(220, 70, 70, 0.18);
+            border-left: 4px solid #ff6b6b;
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        .info-note {
+            background: #0f172a;
+            padding: 0.7rem 1rem;
+            border-radius: 14px;
+            border: 1px solid #2d3a5e;
+            font-size: 0.9rem;
+            margin: 0.8rem 0;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: #2e3a55;
+            margin: 1.5rem 0;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6c7a9e;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #2e3a55;
+        }
+        .flex-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+        .pill {
+            background: #1f2a3e;
+            border-radius: 50px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.25rem;
+            }
+            .title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="rules-container">
+    <div class="header">
+        <div class="title">🏆 QUEDE STUDIO挑战杯比赛规则</div>
+        <div class="sub">
+            <span>⚡ 单局决胜 BO1</span>
+            <span>🗺️ 5v5 王者峡谷地图</span>
+            <span>📌 主办方执裁 · 全员监督</span>
+        </div>
+        <div class="flex-badges" style="justify-content: center; margin-top: 12px;">
+            <span class="badge">🏅 胜方MVP=冠军</span>
+            <span class="badge">🥈 胜方评分第二=亚军</span>
+            <span class="badge">🥉 胜方第三+败方MVP=季军</span>
+        </div>
+    </div>
+
+    <!-- 1. 比赛概述 + 地图设定 -->
+    <div class="section">
+        <div class="section-title">一、比赛概述与地图</div>
+        <ul class="rule-list">
+            <li>比赛采用<strong class="highlight">5v5王者峡谷地图</strong>（开房间模式），每队3人，共6人对战。</li>
+            <li>获胜条件：<strong class="highlight">摧毁敌方水晶</strong>。地图内防御塔、野怪、暴君/主宰均正常刷新，可拆塔开龙。</li>
+            <li>所有比赛统一使用<strong>王者荣耀最新正式服版本</strong>，区服不作限制（QQ与微信已互通，任意合规账号均可）。</li>
+            <li>房间由主办方创建，赛前向全体选手公示双方英雄。</li>
+        </ul>
+    </div>
+
+    <!-- 2. 分组与英雄分配（固定英雄）-->
+    <div class="section">
+        <div class="section-title">二、分组与英雄分配</div>
+        <ul class="rule-list">
+            <li>主办方已于赛前完成<strong>分组对阵</strong>与<strong>英雄分配</strong>，名单一经确定不可更改。</li>
+            <li><span class="rule-number">🔒</span> <strong>严禁擅自切换英雄</strong>，不设置Ban/Pick环节，选手必须使用指定英雄参赛。</li>
+            <li>召唤师技能与铭文不作统一限制，选手可根据英雄自由搭配。</li>
+            <li>选手不得以任何理由更换英雄</li>
+        </ul>
+    </div>
+
+    <!-- 3. 赛制与胜负 -->
+    <div class="section">
+        <div class="section-title">三、比赛赛制（只打一场）</div>
+        <ul class="rule-list">
+            <li>采用<strong>单局决胜制（BO1）</strong>，一局定胜负，无加赛。</li>
+            <li>获胜条件：摧毁敌方水晶 / 对方全体投降 / 裁判判负。</li>
+            <li>若因大规模服务器崩溃等不可抗力导致比赛中断，由主办方根据推塔数、击杀数、经济差等综合数据判定胜负或重赛</li>
+        </ul>
+    </div>
+
+    <!-- 4. 奖项排名 -->
+    <div class="section">
+        <div class="section-title">四、奖项与排名规则</div>
+        <div class="info-note">
+            <strong>🏅 冠军</strong> ：胜方队伍中<strong>评分第一名（MVP）</strong><br>
+            <strong>🥈 亚军</strong> ：胜方队伍中<strong>评分第二名</strong><br>
+            <strong>🥉 季军（并列）</strong> ：<strong>胜方评分第三名</strong> + <strong>败方MVP（败方评分第一名）</strong>
+        </div>
+        <p>评分以游戏对局结束后的<strong>系统综合评分</strong>（KDA、输出、承伤、参团率等）为准。</p>
+    </div>
+
+    <!-- 5. 通用基础规则（核心）-->
+    <div class="section">
+        <div class="section-title">五、通用基础规则</div>
+        
+        <div class="subtitle">📌 5.1 选手规范</div>
+        <ul class="rule-list">
+            <li>仅限<strong>手机或平板</strong>参赛，严禁使用电脑模拟器、外挂、脚本或利用任何BUG。手机/平板系统严禁root/越狱/解锁bl锁</li>
+            <li>禁止辱骂、挂机、蓄意送人头、消极比赛等行为，违者视情节判负/取消资格。</li>
+        </ul>
+
+        <div class="subtitle">📌 5.2 设备与网络</div>
+        <ul class="rule-list">
+            <li>选手自行保证设备与网络稳定，因个人掉线、卡顿导致的后果自行承担，比赛<strong>不因个人原因中断或重赛</strong>。</li>
+        </ul>
+
+        <div class="subtitle">📌 5.3 比赛纪律 & 禁止中途暂停</div>
+        <ul class="rule-list">
+            <li>比赛全程<strong>不得人为退出游戏</strong>，人数不足3人时全队取消资格。</li>
+            <li><span class="warning" style="display: inline-block; margin: 0; padding: 0.1rem 0.4rem;">⛔ 严禁任何形式的暂停操作！</span> 选手不得主动暂停游戏，违规队伍直接判负。</li>
+            <li>若因游戏客户端自身弹出不可关闭的系统级暂停，须由主办方当场记录并判断是否继续。</li>
+        </ul>
+
+        <div class="subtitle">📌 5.4 掉线处理</div>
+        <ul class="rule-list">
+            <li>比赛开始后一旦发生掉线、设备异常，选手须立刻重连，<strong>比赛不暂停、不重赛、不补偿</strong>。</li>
+            <li>仅当因服务器大规模故障导致双方合计3人及以上同时掉线且无法重连时，主办方可裁定重赛。</li>
+        </ul>
+
+        <div class="subtitle">📌 5.5 裁判与监督机制（主办方=裁判+全员监督）</div>
+        <ul class="rule-list">
+            <li><strong>主办方担任裁判</strong>，负责赛前检查、规则执行、争议判定。但<strong>所有参赛选手有权实时监督</strong>主办方行为。</li>
+            <li>若发现主办方存在不公或违规操作，任何选手可当场提出异议，由双方队长与主办方三人<strong>投票协商</strong>（每人一票，主办方持一票）作出最终决定，协商过程须录像留证。</li>
+            <li>争议仲裁以<strong>多数投票制</strong>为最终裁决，全体选手须服从。</li>
+            <li>建议比赛全程由至少一名选手或主办方进行<strong>录制/直播</strong>，存档备查。</li>
+        </ul>
+
+        <div class="subtitle">📌 5.6 直播与录制</div>
+        <ul class="rule-list">
+            <li>主办方及选手均有权对比赛进行直播或录制，参赛即视为同意录制。每场比赛至少保留一份全程录像。</li>
+        </ul>
+
+        <div class="subtitle">📌 5.7 🚫 禁止使用特定软件工具</div>
+        <div class="warning">
+            ⚠️ 严禁使用<strong>虚拟机、连点器、加速器、VPN、代理</strong>等任何影响公平性或改变网络连接的第三方工具。<br>
+            <strong>一经发现 → 直接取消所在队伍比赛资格，成绩作废并通报。</strong>
+        </div>
+    </div>
+
+    <!-- 6. 补充说明与附则 -->
+    <div class="section">
+        <div class="section-title">六、补充与附则</div>
+        <ul class="rule-list">
+            <li>本规则自发布之日起生效，适用于本次比赛的全部场次（仅一场）。</li>
+            <li>主办方作为裁判，须接受全体参赛者的实时监督；任何规则未尽事宜，由<strong>主办方+参赛方现场协商</strong>，以多数投票制决定。</li>
+            <li>最终解释权归<strong>主办方</strong>所有。</li>
+        </ul>
+        <div class="info-note" style="margin-top: 1rem;">
+            💡 重要提醒：英雄已由主办方固定分配，严禁切换；本场为单局决胜，无暂停机会；胜方评分前三及败方MVP将决定最终冠亚季军归属。请所有选手公平竞技，祝比赛愉快！
+        </div>
+    </div>
+
+    <!-- 快速要点总结 -->
+    <hr>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin: 0.5rem 0 0;">
+        <div class="pill">🎯 获胜=拆水晶</div>
+        <div class="pill">⛔ 无暂停</div>
+        <div class="pill">👑 主办方裁判+全员监督</div>
+        <div class="pill">📱 最新正式服/QV互通</div>
+        <div class="pill">🔄 严禁虚拟机/连点器/VPN</div>
+        <div class="pill">🏅 奖励依据系统评分</div>
+    </div>
+
+    <footer>
+        QUEDE STUDIO挑战杯比赛规则
+    </footer>
+    <!-- 右侧快捷按钮组：跳转到别的网站 (比赛规则主页 + 在线客服/官方社群链接示例) -->
+  <div class="floating-buttons">
+    <!-- 按钮1：跳转到比赛规则页面（已约定的官方规则地址） -->
+    <a href="https://syqdsg.github.io/wz3v3/" class="quick-btn" target="_blank" rel="noopener noreferrer" aria-label="比赛规则">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+      <span>比赛协议</span>
+    </a>
+    <!-- 按钮2：跳转到 “赛事客服/官方咨询频道” 示例，为了体现外部网站，选用 QQ 外部联系页或微信快捷方式，但基于规范可设计为联系页面，根据要求“跳转到别的网站”，放置官方赛事咨询页（可用约战/文档页）提供一个额外赛事官网入口 -->
+    <a href="https://docs.qq.com/form/page/DQ1FpQWNQTVFabndi" class="quick-btn" target="_blank" rel="noopener noreferrer" aria-label="报名表">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/>
+      </svg>
+      <span>报名表</span>
+    </a>
+</div>
+</body>
+</html>
