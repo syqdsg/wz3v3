@@ -68,6 +68,18 @@
             flex-wrap: wrap;
             margin-top: 0.3rem;
         }
+        /* 右侧悬浮快捷按钮样式 */
+    .floating-buttons {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 1000;
+      transition: all 0.2s ease;
+    }
         .badge {
             background: #2a3348;
             padding: 0.2rem 0.8rem;
